@@ -2,7 +2,7 @@
 
 REST-Rant is an app where users can review restaurants.
 
-## ##Tech Usage
+##Tech Usage
 
 **CSS Framework**: Bootstrap
 
@@ -12,7 +12,7 @@ REST-Rant is an app where users can review restaurants.
 
 **Node Modules**: method-override, dotenv, express-react-views
 
-## ##Routes
+##Routes
 
 | Method | Path                     | Purpose                                          |
 | ------ | ------------------------ | ------------------------------------------------ |
@@ -28,7 +28,7 @@ REST-Rant is an app where users can review restaurants.
 | DELETE | /places/:id/rant/:rantId | Delete a rant (comment) about a particular place |
 | GET    | \*                       | 404 page (matches any route not defined above)   |
 
-## ##Database
+##Database
 
 **Places**
 
