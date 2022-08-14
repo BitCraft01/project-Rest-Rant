@@ -4,12 +4,15 @@ const express = require("express")
 
 const app = express()
 
+app.set('view engine', 'jsx')
+app.engine('jsx', require('express-react-views').createEngine())
+
 //Importing router from places.js
 app.use('/places', require('./controllers/places'))
 
 //Creating the Homepage
 app.get("/", (req, res) => {
-    res.send("Homepage")
+    res.render("home")
 })
 
 //Creating a catch-all
