@@ -8,10 +8,17 @@ function show(data) {
                 <div className='row'>
                     <div className='col-sm-6'>
                 <img src={data.place.pic} alt={data.place.name} className = "center" width = "100%" />
+                <h3>Located in {data.place.city}, {data.place.state}</h3>
                 </div>
                     <div className='col-sm-6'>
                 <h1>{ data.place.name}</h1>
-                <h2>Location</h2>
+                <h2>Description</h2>
+                <h3>
+                    {data.place.showEstablished()}
+                </h3>
+                <h4>
+                    Serving {data.place.cuisines}
+                </h4>
                 <p>{data.place.city}, {data.place.state}</p>
                 <h2>Cuisine Style</h2>
                 <p className="text-center">
