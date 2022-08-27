@@ -1,6 +1,6 @@
-const db = require('./models')
+const db = require('../models')
 
-db:AnimationPlaybackEvent.create([{
+db.Place.create([{
     name: 'H-THAI-ML',
     city: 'Seattle',
     state: 'WA',
@@ -16,7 +16,7 @@ db:AnimationPlaybackEvent.create([{
     founded: 2020
 }])
 .then(() => {
-    console.log('Success', err)
+    console.log('Success')
     process.exit()
 })
 .catch(err => {
