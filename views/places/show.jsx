@@ -11,12 +11,15 @@ function show(data) {
       comments = data.place.comments.map(c => {
         return (
           <div className="border">
-            <h2 className="rant">{c.rant ? 'Rant! ðŸ˜¡' : 'Rave! ðŸ˜»'}</h2>
+            <h2 className="rant">{comment.rant ? "Rant! 😡" : "Rave! 😻"}</h2>
             <h4>{c.content}</h4>
             <h3>
               <stong>- {c.author}</stong>
             </h3>
             <h4>Rating: {c.stars}</h4>
+            <form method="POST" action={`/places/${data.place.id}/comment/${comments.id}?_method=DELETE`}>
+                <input type="submit" className="btn btn-danger" value="Delete Comment"/>
+            </form>
           </div>
         )
       })
@@ -55,7 +58,32 @@ function show(data) {
                 <h2>Comments</h2>
                 {comments}
             </main>
-            
+            <div>
+                <div> 
+                    <h3 className="text-center">Comments</h3>
+                        {comments}
+                    <h4 className="text-center">Got Your Own Rant or Rave?</h4>
+                </div>  
+                <form action={`/places/${data.place.id}/comment`} method="POST">                    
+                    <div>
+                        <label htmlFor="author">Name: </label>
+                        <input className="form-control" type="text" id="author" name="author" placeholder="Name Here!"/>
+                    </div>
+                    <div>
+                        <label htmlFor="stars">Rating: </label>                                
+                        <input className="form-control" type="range" step="0.5" min="1" max="5" id="stars" name="stars"/>                                  
+                    </div>
+                    <div>
+                        <label htmlFor="rant">Is this a rant? </label>             
+                        <input type="checkbox" id="rant" name="rant" />                         
+                    </div>
+                    <div>
+                        <label htmlFor="content">Comment: </label>
+                        <textarea className="form-control" type="text" id="content" name="content" placeholder="I love this place! ..."></textarea>
+                        <button className="btn btn-primary" type="submit">Submit</button>
+                    </div>                    
+                </form>
+            </div>
         </Def>
     )
 }
